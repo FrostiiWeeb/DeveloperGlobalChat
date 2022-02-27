@@ -31,7 +31,7 @@ async def on_error(event, *args, **kwargs):
   error_wanted=traceback.format_exc()
   traceback.print_exc()
 
-extensions = [ext.rstrip(".py") for ext in os.listdir("./cogs")]
+extensions = [ext.rstrip(".py") for ext in os.listdir("./cogs") if ext != "__pycache__"]
 for cog in extensions:
   bot.load_extension(f"cogs.{cog}")
 
